@@ -1,10 +1,11 @@
 <?php
-use App\Models\Tenant;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TenantContoller;
 use Illuminate\Support\Facades\Route;
 
-    Route::view('/', 'welcome')->name('welcome');
+
+    Route::get('/',  [TenantContoller::class, 'view_'] );
     
     Route::view('register', 'auth.register')->name('register');
     
@@ -12,22 +13,12 @@ use Illuminate\Support\Facades\Route;
     
 
     //landlord
-    Route::view('home', 'landlord.admin.home')->name('home')->middleware('auth');;
+    Route::get('home', [TenantContoller::class, 'view_home'])->name('home')->middleware('auth');;
 
 
     //position post
-    Route::post( '/login' ,function(){
-        $credenciales = request()->only('email', 'password');
-        if(Auth::attempt($credenciales)){
-            request()->session()->regenerate();            
-            return redirect('home');
-        }else{
-            return redirect('login');
-        }
-    });
-
-
-    Route::post('/', fn(Request  $request) => Tenant::create($request->only('name','domain') ));
+    Route::post( 'login' , [LoginController::class , 'Login']);
+    Route::post( 'logout' , [LoginController::class , 'Logout'])->name('logout');
 
 
     //tenant

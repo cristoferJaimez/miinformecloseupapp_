@@ -15,21 +15,21 @@
     
         <link href=" asset('css/app.css') " rel="stylesheet">
     </head>
-    <body class="antialiased">
+    <body class="">
        @include('layout.nav')
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                 <img src="https://www.close-upinternational.com/img/logo.svg" width="300px" />
-                </div>
-            
+            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 container-fluid">
+           
 
-            <div class="card">
-                <div class="card-body">
-                    Welcome to  Index Pages.
+            @foreach ($tenants as $key => $value)
+            <div class="card col-3 mt-4 text-center">
+                <div class="card-body" style="text-transform: capitalize">
+                  <a href="{{$value->domain}}" class="link-card"> Host  {{$value->name}} </a>
                 </div>
-              </div>
+            </div>     
+            @endforeach 
+                
+           
 
 
         </div>    
