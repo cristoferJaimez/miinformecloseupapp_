@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
     </head>
-    <body class=" m-0  row justify-content-center aling-items-center">
+    <body class=" container ">
         
     @include('layout.nav')
 

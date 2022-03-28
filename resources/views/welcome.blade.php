@@ -15,20 +15,36 @@
     
         <link href=" asset('css/app.css') " rel="stylesheet">
     </head>
-    <body class="">
+    <body class="container">
        @include('layout.nav')
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 container-fluid">
-           
 
-            @foreach ($tenants as $key => $value)
+           <h1><i class="fa-solid fa-link"></i>Software de Servicios</h1>
+                <h2>Mi Informe Close Up</h2>
+
+                <hr>
+   
+                <h1><i class="fa-solid fa-link"></i>Domains</h1>
+                <hr>
+           @foreach ($tenants as $key => $value)
+         
             <div class="card col-3 mt-4 text-center">
                 <div class="card-body" style="text-transform: capitalize">
-                  <a href="{{$value->domain}}" class="link-card"> Host  {{$value->name}} </a>
+                   <form action="http://{{$value->domain}}/miinformecloseupapp/public" method="POST">
+                     @csrf 
+                      <input type="text" id="id" value="{{$value->id}}" hidden disabled /> 
+                     <a onclick="this.closest('form').submit()" class="btn" class="link-card"> Host  {{$value->name}} </a>
+                  </form> 
                 </div>
             </div>     
             @endforeach 
-                
+            
+            <h1><i class="fa-solid fa-link"></i>Information</h1>
+            <hr>
+
+            <h1><i class="fa-solid fa-link"></i>Footer</h1>
+            <hr>
            
 
 

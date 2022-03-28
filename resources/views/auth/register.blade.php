@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registro</title>
 </head>
-<body>
+<body class="container">
     @include('layout.nav')
     
     <div class="container col-6">

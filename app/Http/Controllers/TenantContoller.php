@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 class TenantContoller extends Controller
 {
    
+    //landloard
+
     public function view_home(){
         $tenants =   DB::table('tenants')->select(['id', 'name', 'domain', 'database', 'created_at'])->get(['name']);
         //return $tenants;
@@ -26,4 +28,18 @@ class TenantContoller extends Controller
     }
 
 
+    // tenant
+
+    public function view_home_tenant(){
+        $tenants =   DB::table('tenants')->select(['id', 'name', 'domain', 'database', 'created_at'])->get(['name']);
+        //return $tenants;
+        return  view('tenant/admin/home',  compact('tenants'));
+    }
+
+    //tenant table
+    public function table(){
+        $sql = 'SELECT * FROM users';
+        $products = DB::select($sql);
+        return $products;
+    }
 }

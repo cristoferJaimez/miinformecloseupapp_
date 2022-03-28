@@ -3,6 +3,10 @@
 use App\Http\Controllers\TenantContoller;
 use Illuminate\Support\Facades\Route;
 use \App\Models\Tenant;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LoginTenantController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +18,14 @@ use \App\Models\Tenant;
 |
 */
 
-
-
+//view routs
+Route::view('login', 'auth.login')->name('login')->middleware('guest');
+Route::view('register', 'auth.register')->name('register');
+//petition get
 Route::get('/',  [TenantContoller::class, 'view'] );
+//tenant
+Route::get('home', [TenantContoller::class, 'view_home_tenant',])->middleware('auth');;
+//post
+//position post
+Route::post( 'login' , [LoginTenantController::class , 'Login']);
+Route::post( 'logout' , [LoginController::class , 'Logout'])->name('logout');

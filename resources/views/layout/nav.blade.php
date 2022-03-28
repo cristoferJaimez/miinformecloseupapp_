@@ -10,18 +10,21 @@
                 <img src="https://www.close-upinternational.com/img/logo.svg" width="150px" alt="Close up logo" />
             </a>
 
+            
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
 
             <div class="  collapse navbar-collapse" id="navbarSupportedContent">    
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              
 
                 @auth
                 <li class="nav-item">
                     <form class="d-flex" action="#">
                         @csrf
-                        <input class="form-control me-2" value="{{ old('email') }}" name="search" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2" value="{{ old('search') }}" name="search" type="search" placeholder="Search" aria-label="Search">
                       </form>
                 </li>   
     
@@ -45,7 +48,8 @@
                     <li class="nav-item"><a class="nav-link" href="{{ 'login' }}"><i class="fa-thin fa-user"></i>log In</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ 'register' }}"><i class="fa-thin fa-id-card"></i>Register</a></li>
                     @endauth
-                    
+                  
+    
                 </ul>
                
         </div>

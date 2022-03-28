@@ -17,20 +17,13 @@
     
         <link href=" asset('css/app.css') " rel="stylesheet">
     </head>
-    <body class="antialiased">
+    <body class="container">
        @include('layout.nav')
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
            
 
-            <div class="card">
-                <div class="card-body">
-                    @foreach ($tenants as $key => $value)
-                        {{$value->name}}
-                    @endforeach
-                </div>
-              </div>
-
+           
 
         </div>    
     </body>
