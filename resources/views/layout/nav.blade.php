@@ -31,22 +31,22 @@
                 @endauth    
                 
 
-                <li class="nav-item">  <a class="nav-link" href="{{'/'}}"> <i class="fa-thin fa-door-open"></i> Welcome</a></li>
+                <li class="nav-item ">  <a class="nav-link" href="{{'/'}}"> <i class="fa-thin fa-door-open"></i> Welcome</a></li>
                     @auth
-                <li class="nav-item">  <a class="nav-link" href="{{'home'}}"> <i class="fa-thin fa-house-user"></i> Home</a></li>
-                <li class="nav-item">  <a class="nav-link" href="{{'home'}}"><i class="fa-thin fa-message"></i></a></li>
-                <li class="nav-item">
+                <li class="nav-item ">  <a class="nav-link " href="{{'home'}}"> <i class="fa-thin fa-house-user"></i> Home</a></li>
+                <li class="nav-item ">  <a class="nav-link " href="{{'home'}}"><i class="fa-thin fa-message"></i></a></li>
+                <li class="nav-item ">
                     
                 </li>    
-                <li class="nav-item">
+                <li class="nav-item stretched-link">
                     <form  action="{{'logout'}}" style="display: inline;" method="POST">
                         @csrf
                         <a class="nav-link" href="#" onclick="this.closest('form').submit()"> <i class="fa-thin fa-arrow-right-from-bracket"></i> Log out</a>
                     </form>
                     <li>
                     @else
-                    <li class="nav-item"><a class="nav-link" href="{{ 'login' }}"><i class="fa-thin fa-user"></i>log In</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ 'register' }}"><i class="fa-thin fa-id-card"></i>Register</a></li>
+                    <li class="nav-item "><a class="nav-link " href="{{ 'login' }}"><i class="fa-thin fa-user"></i>log In</a></li>
+                    <li class="nav-item "><a class="nav-link " href="{{ 'register' }}"><i class="fa-thin fa-id-card"></i>Register</a></li>
                     @endauth
                   
     

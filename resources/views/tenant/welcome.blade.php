@@ -22,8 +22,13 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
            
+            <h1 class="text-capitalize "> {{$value->name}} </h1>
+            <hr>
 
-           
+            <h1 class="text-capitalize "> {{$value->domain}} </h1>
+            <hr>
+            <h1 class="text-capitalize "> {{$value->database}} </h1>
+            <hr>
 
         </div>    
     </body>
