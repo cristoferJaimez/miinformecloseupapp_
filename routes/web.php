@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TenantContoller;
 use Illuminate\Support\Facades\Route;
 use \App\Models\Tenant;
 /*
@@ -15,7 +16,4 @@ use \App\Models\Tenant;
 
 
 
-Route::get('/', function () {
-    $tenant =   dd(\App\Models\Tenant::all(['name']));
-    return view('/tenant/welcome', ['tenant' => $tenant] );
-});
+Route::get('/',  [TenantContoller::class, 'view'] );
