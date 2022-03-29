@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class TenantContoller extends Controller
 {
    
@@ -29,6 +30,10 @@ class TenantContoller extends Controller
 
 
     // tenant
+
+    public function savetenant(Request $request){
+        return $request;
+    }
 
     public function view_home_tenant(){
         $tenants =   DB::table('tenants')->select(['id', 'name', 'domain', 'database', 'created_at'])->get(['name']);

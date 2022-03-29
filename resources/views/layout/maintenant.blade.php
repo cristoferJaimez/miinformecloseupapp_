@@ -11,7 +11,7 @@
         
         <div class="row">
             <div class="col-2 m-0 ">
-                @include('layout.navdashboard')
+                @include('layout.navdashboardtenante')
             </div>
             <div class="col-10 m-0 ">
               </div>

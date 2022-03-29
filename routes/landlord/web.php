@@ -24,4 +24,5 @@ use Illuminate\Support\Facades\Route;
     Route::post( 'logout' , [LoginController::class , 'Logout'])->name('logout');
 
 
-    //tenant
+    //tenant register
+    Route::post('')->name('tenantsave');

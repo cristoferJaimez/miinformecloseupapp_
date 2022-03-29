@@ -29,3 +29,6 @@ Route::get('home', [TenantContoller::class, 'view_home_tenant',])->middleware('a
 //position post
 Route::post( 'login' , [LoginTenantController::class , 'Login']);
 Route::post( 'logout' , [LoginController::class , 'Logout'])->name('logout');
+
+//post url
+Rout::post( 'post', [ControllerPost::class, 'post'] )->middleware('auth');
