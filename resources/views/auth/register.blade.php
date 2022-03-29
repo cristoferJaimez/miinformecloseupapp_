@@ -9,41 +9,29 @@
 <body class="container">
     @include('layout.nav')
     
-    <div class="container col-6">
+    <div class="container mt-5  ">
 
-        <div class="card border  border-light m-2 p-3">
+        <div class="card col-4 mx-auto mt-5 border  border-light m-2 p-4">
             <form action="{{route('register')}}" method="POST">
                 <div class="form-group text-center">
-                @csrf
+                @csrf 
                     <label class="form-label">
-                        <input type="text" class="form-control" autofocus required name="name" placeholder="Names..." />
+                        <input type="text" class="form-control" required value="{{ old('name') }}" autofocus  name="name" placeholder="Names..." />
+                        <div class="form-text text-danger">@error('name'){{$message}}@enderror</div>
                     </label>
                     <br>
                     <label class="form-label">
-                        <input type="number" class="form-control" required name="document" placeholder="Document..." />
+                        <input type="email" class="form-control" required value="{{ old('email') }}"    name="email" placeholder="Email..." />
+                        <div class="form-text text-danger">@error('email'){{$message}}@enderror</div>
                     </label>
                     <br>
                     <label class="form-label">
-                        <input type="text" class="form-control" required name="addres" placeholder="Addres..." />
+                        <input type="password" class="form-control" required  name="password" placeholder="Password..." />
+                        <div class="form-text text-danger">@error('password'){{$message}}@enderror</div>
                     </label>
+                   
                     <br>
-                    <label class="form-label">
-                        <input type="email" class="form-control" required name="email" placeholder="Email..." />
-                    </label>
-                    <br>
-                    <label class="form-label">
-                        <input type="email" class="form-control" required name="email_" placeholder="Confirm_Email..." />
-                    </label>
-                    <br>
-                    <label class="form-label">
-                        <input type="password" class="form-control" required name="password" placeholder="Password..." />
-                    </label>
-                    <br>
-                    <label class="form-label">
-                        <input type="password" class="form-control" required name="password_" placeholder="Repeat Password..." />
-                    </label>
-                    <br>
-                    <div class="d-grid gap-2 col-6 mx-auto">
+                    <div class="mt-2 col-6 mx-auto">
                           <button class="btn  btn-primary" type="submit">Register</button>
                     </div>
                 </div>   

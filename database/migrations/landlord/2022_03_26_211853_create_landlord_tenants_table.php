@@ -14,6 +14,12 @@ class CreateLandlordTenantsTable extends Migration
             $table->string('domain')->unique();
             $table->string('database')->unique();
             $table->timestamps();
+
+            $table->foreignId('fk_user')
+            ->nullable()
+            ->constrained('users')
+            ->cascadeOnUpdate()
+            ->nullOnDelete();
         });
     }
 }

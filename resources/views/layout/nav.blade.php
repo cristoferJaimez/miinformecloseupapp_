@@ -9,9 +9,6 @@
             <a href="{{'/'}}"  class="navbar-brand" >
                 <img src="https://www.close-upinternational.com/img/logo.svg" width="150px" alt="Close up logo" />
             </a>
-
-            
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -38,7 +35,7 @@
                 <li class="nav-item ">
                     
                 </li>    
-                <li class="nav-item stretched-link">
+                <li class="nav-item ">
                     <form  action="{{'logout'}}" style="display: inline;" method="POST">
                         @csrf
                         <a class="nav-link" href="#" onclick="this.closest('form').submit()"> <i class="fa-thin fa-arrow-right-from-bracket"></i> Log out</a>
