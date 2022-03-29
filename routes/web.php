@@ -31,4 +31,4 @@ Route::post( 'login' , [LoginTenantController::class , 'Login']);
 Route::post( 'logout' , [LoginController::class , 'Logout'])->name('logout');
 
 //post url
-Rout::post( 'post', [ControllerPost::class, 'post'] )->middleware('auth');
+Route::post( 'post', [ControllerPost::class, 'post'] )->name('post')->middleware('auth');

@@ -14,7 +14,8 @@
                 @include('layout.navdashboardtenante')
             </div>
             <div class="col-10 m-0 ">
-              </div>
+                @include('layout.post')
+            </div>
         </div>
     </body>
 </html>
