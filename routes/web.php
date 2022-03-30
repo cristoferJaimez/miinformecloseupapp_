@@ -4,6 +4,7 @@ use App\Http\Controllers\TenantContoller;
 use Illuminate\Support\Facades\Route;
 use \App\Models\Tenant;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ControllerPost;
 use App\Http\Controllers\LoginTenantController;
 
 

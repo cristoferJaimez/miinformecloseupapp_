@@ -25,4 +25,4 @@ use Illuminate\Support\Facades\Route;
 
 
     //tenant register
-    Route::post('')->name('tenantsave');
+  
