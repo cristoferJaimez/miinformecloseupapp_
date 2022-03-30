@@ -11,6 +11,8 @@
             <a href="{{ '/' }}" class="navbar-brand">
                 <img src="https://www.close-upinternational.com/img/logo.svg" width="150px" alt="Close up logo" />
             </a>
+           
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -38,8 +40,17 @@
                     @auth
                         <li class="nav-item "> <a class="nav-link " href="{{ 'home' }}"> <i
                                     class="fa-thin fa-house-user"></i> Home</a></li>
-                        <li class="nav-item "> <a class="nav-link " href="{{ 'home' }}"><i
-                                    class="fa-thin fa-message"></i></a></li>
+                        <li class="nav-item "> 
+                            <div class="btn-group">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuClickableOutside" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
+                                 <i class="fas fa-user"></i>
+                                </button>
+                                <ul class="dropdown-menu mt-2" aria-labelledby="btnGroupDrop1">
+                                  <li><a class="dropdown-item" href="#"> </a>  </li>
+                                  <li><a class="dropdown-item" href="#"></a> </a></li>
+                                </ul>
+                              </div>
+                        </li>
                         <li class="nav-item ">
 
                         </li>

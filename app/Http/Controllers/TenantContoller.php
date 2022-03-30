@@ -23,9 +23,12 @@ class TenantContoller extends Controller
         return  view('/welcome',  compact('tenants'));
     }
 
-    public function view(){
-        $tenants =   DB::table('tenants')->select(['id', 'name', 'domain', 'database'])->get(['name']);
-        return  view('tenant/welcome',  compact('tenants'));
+    public function view(Request $request){
+         $tenant = DB::table('tenants')
+        ->where('id', $request->id)
+        ->first();
+        
+        return  view('tenant/welcome',  ['tenant' => $tenant]);
     }
 
 

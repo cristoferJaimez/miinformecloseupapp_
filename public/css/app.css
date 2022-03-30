@@ -19065,3 +19065,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+#dropdownMenuClickableOutside{
+  background-color:#f8fafc;
+  border: none;
+  color: #000;
+}
+
+
