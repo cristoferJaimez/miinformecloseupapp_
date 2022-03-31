@@ -20,8 +20,8 @@ class LoginTenantController extends Controller
         if(Auth::attempt($request->only('email', 'password'), $remember)){
             request()->session()->regenerate(); 
             \Config::set('database.default', 'tenant');
-            $tenants = DB::table('users')->select('name', 'email')->get();
-            return  view('tenant/admin/home',  compact('tenants'));;
+            $tenant = DB::table('users')->select('name', 'email')->get();
+            return  view('tenant/admin/home',  compact('tenant'));;
         }
 
         throw ValidationException::withMessages([
