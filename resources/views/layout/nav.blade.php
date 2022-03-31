@@ -64,7 +64,7 @@
                         @else
                         <li class="nav-item "><a class="nav-link " href="{{ 'login' }}"><i
                                     class="fa-thin fa-user"></i>log In</a></li>
-                        <li class="nav-item "><a class="nav-link " href="{{ 'register' }}"><i
+                        <li class="nav-item "><a class="nav-link " href="{{ 'registrationrequest' }}"><i
                                     class="fa-thin fa-id-card"></i>Register</a></li>
                     @endauth
 

@@ -21,6 +21,13 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            
+            $table->foreignId('fk_rol')
+            ->nullable()
+            ->constrained('users_rol')
+            ->cascadeOnUpdate()
+            ->nullOnDelete();
         });
     }
 

@@ -4,7 +4,7 @@
                 <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <div class="dropdown pb-4">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://avatars.githubusercontent.com/u/51424948?v=4" alt="{{auth()->user()->name}}" width="30" height="30" class="rounded-circle">
+                            <img src="https://www.close-upinternational.com/img/logo.svg" alt="{{auth()->user()->name}}" width="40" height="40" class=" p-1 border border-danger rounded-circle">
                             <span class="d-none d-sm-inline mx-1 text-dark">{{ auth()->user()->name }}</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
@@ -34,17 +34,18 @@
                         <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Host</span> </a>
                         <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Domains</span>  </a>
-                            </li>
-                            <li>
-                                <a href="{{'/'}}" class="nav-link px-0"> <span class="d-none d-sm-inline">Users</span> </a>
+                            
+                            <li class="card-link">
+                                <form action="{{'userslist'}}" target="iframe" method="POST">
+                                    @csrf
+                                    <button class="btn text-secondary btn-sm">User</button>
+                                </form>
                             </li>
                         </ul>
                     </li>
                     
                     <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle  btn disabled ">
                             <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Option</span></a>
                         <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                             <li class="w-100">

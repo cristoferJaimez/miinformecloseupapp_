@@ -2,30 +2,35 @@
 <html>
 
 <head>
-    <title> {{ auth()->user()->fk_rol }}-{{ auth()->user()->name }} @yield('Close Up')</title>
+    <title> {{ auth()->user()->name }} @yield('Close Up')</title>
 
 </head>
 
 <body class="container fluid">
-    @include('layout.nav')
+    @auth
 
-    <div class="row">
-        <div class="col-2 m-0 ">
-            @include('layout.navdashboard')
+
+        @include('layout.nav')
+
+        <div class="row">
+            <div class="col-2 m-0 ">
+                @include('layout.navdashboard')
+            </div>
+            <div class="col-8 container  mt-5" id="navlayout">
+                <iframe src="{{ URL::to('homeindex') }}" allowfullscreen class="col-12 mx-auto" name="iframe" frameborder="1"></iframe>
+            </div>
+            <div class="col-2 mt-5">
+                <h6 class="text-muted">--Other Opciones--</h6>
+                <ul>
+                    
+                </ul>
+            </div>
+
         </div>
-        <div class="col-8 container " id="navlayout">
-            @include('layout.homeindex')
-        </div>
-        <div class="col-2">
-           other opciones
-           <ul>
-               <li>option 1</li>
-               <li>option 2</li>
-               <li>option 3</li>
-           </ul>
-        </div>
-       
-    </div>
+    
+
+    @endauth
+
     <script src="{{ asset('js/nav.js') }}"></script>
 
 </body>

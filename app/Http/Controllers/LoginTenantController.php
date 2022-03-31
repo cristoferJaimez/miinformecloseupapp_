@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\DB;
+
 
 class LoginTenantController extends Controller
 {
@@ -16,9 +18,9 @@ class LoginTenantController extends Controller
         \Config::set('database.default', 'tenant');
 
         if(Auth::attempt($request->only('email', 'password'), $remember)){
-            request()->session()->regenerate();            
-            
-            return redirect()->intended('home')->with('status', 'You are logger in!');
+            request()->session()->regenerate(); 
+               
+            return redirect()->intended('home')->with('status', 'admin ');
         }
 
         throw ValidationException::withMessages([
@@ -26,4 +28,6 @@ class LoginTenantController extends Controller
         ]);
         
     }
+
+
 }

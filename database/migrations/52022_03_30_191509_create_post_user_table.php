@@ -16,21 +16,22 @@ return new class extends Migration
         Schema::create('post_user', function (Blueprint $table) {
             $table->id();
             $table->string('stated');
+            $table->string('fk_user');
             $table->timestamps();
 
             //relation 1:*
-            
-            $table->foreingId('fk_users')
+            $table->foreignId('fk_users')
             ->nullable()
             ->constrained('users')
-            ->cascadaOnUpdate()
+            ->cascadeOnUpdate()
             ->nullOnDelete();
 
-            $table->foreingId('fk_post')
+            $table->foreignId('fk_post')
             ->nullable()
             ->constrained('post')
-            ->cascadaOnUpdate()
+            ->cascadeOnUpdate()
             ->nullOnDelete();
+           
         });
     }
 

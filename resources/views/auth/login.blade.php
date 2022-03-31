@@ -15,10 +15,7 @@
         <div class="m-0 mt-5 row justify-content-center aling-items-center ">
 
             <div class="col-auto   text-center">
-                
-                    <img src="https://cdn-icons.flaticon.com/png/512/2550/premium/2550260.png?token=exp=1648659134~hmac=7b874974d55b7b4947193a51333466d3" class="rounded-circle bg-white" alt="img"
-                        width="80px" height="80px" />
-
+             
                 <div class="card border mt-5" style="border:none">
                     <div class="card-body">
                         <form action="" method="POST">

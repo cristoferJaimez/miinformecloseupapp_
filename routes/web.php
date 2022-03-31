@@ -21,14 +21,16 @@ use App\Http\Controllers\LoginTenantController;
 
 //view routs
 Route::view('login', 'auth.login')->name('login')->middleware('guest');
-Route::view('register', 'auth.register')->name('register');
+Route::view('register', 'auth.register')->name('register')->middleware('auth');
+Route::view('registrationrequest', 'auth.registrationrequest')->name('registrationrequest');
+
 //petition get
-Route::get('/',  [TenantContoller::class, 'view'] );
+Route::get('/',  [TenantContoller::class, 'view'] );    
 //tenant
 Route::get('home', [TenantContoller::class, 'view_home_tenant',])->middleware('auth');;
 //post
 //position post
-Route::post( 'login' , [LoginTenantController::class , 'Login']);
+Route::post( 'login' , [LoginTenantController::class , 'Login'])->middleware('guest');
 Route::post( 'logout' , [LoginController::class , 'Logout'])->name('logout');
 
 //post url

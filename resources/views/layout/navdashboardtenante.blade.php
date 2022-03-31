@@ -4,7 +4,7 @@
                 <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <div class="dropdown pb-4">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://avatars.githubusercontent.com/u/51424948?v=4" alt="{{auth()->user()->name}}" width="30" height="30" class="rounded-circle">
+                            <img src="https://www.close-upinternational.com/img/logo.svg" alt="{{auth()->user()->name}}" width="40" height="40" class="rounded-circle p-1 border">
                             <span class="d-none d-sm-inline mx-1 text-dark">{{ auth()->user()->name }}</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
