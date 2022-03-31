@@ -101,7 +101,3 @@
             </div>
         </div>
     @endif
-    <hr class="text-muted">
-    <div class="v-line">
-
-    </div>
