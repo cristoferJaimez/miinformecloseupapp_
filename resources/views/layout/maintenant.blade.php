@@ -3,11 +3,10 @@
     <head>
         <title>{{ auth()->user()->name }} @yield('title')</title>
     </head>
-    <style>
-       a { text-decoration: none} ;
-    </style>
+
     <body class="container fluid">
         @include('layout.nav')
+        {{$tenants}}
         <div class="row">
             <div class="col-2 m-0 ">
                 @include('layout.navdashboardtenante')

@@ -6,6 +6,7 @@
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="https://www.close-upinternational.com/img/logo.svg" alt="{{auth()->user()->name}}" width="40" height="40" class="rounded-circle p-1 border">
                             <span class="d-none d-sm-inline mx-1 text-dark">{{ auth()->user()->name }}</span>
+                            
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
                             <li><a class="dropdown-item" href="#">New user...</a></li>
