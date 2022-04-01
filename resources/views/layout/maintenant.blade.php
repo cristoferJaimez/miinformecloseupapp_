@@ -6,7 +6,7 @@
 
     <body class="container fluid">
         @include('layout.nav')
-        {{$tenant}}
+       
         <div class="row">
             <div class="col-2 m-0 ">
                 @include('layout.navdashboardtenante')

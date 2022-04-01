@@ -12,7 +12,9 @@
                 <img src="https://www.close-upinternational.com/img/logo.svg" width="150px" alt="Close up logo" />
             </a>
            
+            @auth
             
+            @endauth
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
