@@ -12,23 +12,23 @@ class TenantContoller extends Controller
     //landloard
 
     public function view_home(){
-        $tenants =   DB::table('tenants')->select(['id', 'name', 'domain', 'database', 'created_at'])->get(['name']);
         //return $tenants;
-        return  view('landlord/admin/home',  compact('tenants'));
+        return  view('landlord/admin/home');
     }
 
     public function view_(){
-        $tenants =   DB::table('tenants')->select(['id', 'name', 'domain', 'database'])->get(['name']);
+        // $tenants =   DB::table('tenants')->select(['id', 'name', 'domain', 'database'])->get(['name']);
         //return $tenants;
+        $tenants = "";
         return  view('/welcome',  compact('tenants'));
     }
 
     public function view(Request $request){
-         $tenant = DB::table('tenants')
+       /*  $tenant = DB::table('tenants')
         ->where('id', $request->id)
         ->first();
-        
-        return  view('tenant/welcome',  ['tenant' => $tenant]);
+        */
+        return  view('tenant/welcome');
     }
 
 
@@ -39,9 +39,8 @@ class TenantContoller extends Controller
     }
 
     public function view_home_tenant(){
-        $tenants =   DB::table('tenants')->select(['id', 'name', 'domain', 'database', 'created_at'])->get(['name']);
         //return $tenants;
-        return  view('tenant/admin/home',  compact('tenants'));
+        return  view('tenant/admin/home' );
     }
 
     //tenant table

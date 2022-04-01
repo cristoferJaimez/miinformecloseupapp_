@@ -4,8 +4,8 @@
                 <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <div class="dropdown pb-4">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://www.close-upinternational.com/img/logo.svg" alt="{{auth()->user()->name}}" width="40" height="40" class="rounded-circle p-1 border">
-                            <span class="d-none d-sm-inline mx-1 text-dark">{{ auth()->user()->name }}</span>
+                            <img src="https://www.close-upinternational.com/img/logo.svg" alt="<?php echo e(auth()->user()->name); ?>" width="40" height="40" class="rounded-circle p-1 border">
+                            <span class="d-none d-sm-inline mx-1 text-dark"><?php echo e(auth()->user()->name); ?></span>
                             
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
@@ -17,8 +17,8 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li class="">
-                                <form action="{{ 'logout' }}" style="display: inline;" method="POST">
-                                    @csrf
+                                <form action="<?php echo e('logout'); ?>" style="display: inline;" method="POST">
+                                    <?php echo csrf_field(); ?>
                                     <a class="dropdown-item" href="#" onclick="this.closest('form').submit()"> <i
                                             class="fa-thin fa-arrow-right-from-bracket"></i> Sing out</a>
                                 </form>  
@@ -28,15 +28,15 @@
                 </a>
                 <ul class="" id="menu">
                    
-                  @if (auth()->user()->fk_rol === 1)
+                  <?php if(auth()->user()->fk_rol === 1): ?>
 
                   <nav class="nav flex-column">
-                    <form action="{{'usersclients'}}" target="myiframe" method="POST">
-                        @csrf
+                    <form action="<?php echo e('usersclients'); ?>" target="myiframe" method="POST">
+                        <?php echo csrf_field(); ?>
                         <button class="nav-link active btn">Post</button>
                     </form>
                   </nav>
-                  @else
+                  <?php else: ?>
                   <li class="text-muted">User</li>
 
                   <li>
@@ -51,7 +51,7 @@
                           </li>
                       </ul>
                   </li>
-                  @endif
+                  <?php endif; ?>
 
                 
                  
@@ -62,4 +62,4 @@
             </div>
         </div>
         
-    </div>
+    </div><?php /**PATH C:\xampp\htdocs\miinformecloseupapp\resources\views/layout/navdashboardtenante.blade.php ENDPATH**/ ?>

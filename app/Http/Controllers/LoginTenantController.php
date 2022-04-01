@@ -15,11 +15,10 @@ class LoginTenantController extends Controller
         $remember = $request->filled('remember');
         
         //https://es.stackoverflow.com/questions/373919/cambiar-la-conexion-en-laravel
-        // \Config::set('database.default', 'tenant');
+         //\Config::set('database.default', 'tenant');
 
         if(Auth::attempt($request->only('email', 'password'), $remember)){
             request()->session()->regenerate(); 
-          //  \Config::set('database.default', 'tenant');
             $tenant = DB::table('users')->select('name', 'email')->get();
             return  view('tenant/admin/home',  compact('tenant'));;
         }

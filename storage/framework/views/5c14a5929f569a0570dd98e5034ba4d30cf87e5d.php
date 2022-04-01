@@ -1,16 +1,17 @@
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<script src="{{ asset('js/app.js') }}"></script>
+<link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+<script src="<?php echo e(asset('js/app.js')); ?>"></script>
 
 <div class="container">
     <div class="row">
 
         <h1 class="text-center mt-4 mb-4"> List Users </h1>
 
-        @foreach ($users as $item )
+        <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="card row mt-1">
             <div class="card-body">
                 <div class="col-8">
-                    {{$item->name}}
+                    <?php echo e($item->name); ?>
+
                 </div>
                 <div class="col-4 text-rigth" style="display: inline">
                     <a class="btn text-muted" data-bs-toggle="modal" href="#exampleModalToggle" role="button"># Post</a>
@@ -20,7 +21,7 @@
                 </div>
             </div>
         </div>
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
     </div>
@@ -44,3 +45,4 @@
         </div>
     </div>
 </div>
+<?php /**PATH C:\xampp\htdocs\miinformecloseupapp\resources\views/layout/usersclients.blade.php ENDPATH**/ ?>
