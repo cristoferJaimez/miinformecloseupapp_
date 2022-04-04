@@ -31,10 +31,18 @@
                   <?php if(auth()->user()->fk_rol === 1): ?>
 
                   <nav class="nav flex-column">
-                    <form action="<?php echo e('usersclients'); ?>" target="myiframe" method="POST">
-                        <?php echo csrf_field(); ?>
-                        <button class="nav-link active btn">Post</button>
-                    </form>
+                    <li>
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Public</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" onclick="divChange()" class="nav-link px-0"> <span class="d-none d-sm-inline"> Report </span> </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Users</span> </a>
+                            </li>
+                        </ul>
+                    </li>
                   </nav>
                   <?php else: ?>
                   <li class="text-muted">User</li>

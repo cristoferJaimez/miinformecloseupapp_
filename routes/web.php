@@ -32,7 +32,7 @@ use App\Http\Controllers\LoginTenantController;
     //petition get
     Route::get('/',  [TenantContoller::class, 'view'] );    
     //tenant
-    Route::get('home', [TenantUsersController::class, 'viewUsersTenant'])->middleware('auth');;
+    Route::get('home', [TenantContoller::class, 'view_home_tenant'])->middleware('auth');;
     //post
     //position post
     Route::post( 'login' , [LoginTenantController::class , 'Login'])->middleware('guest');
