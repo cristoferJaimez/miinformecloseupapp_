@@ -20,13 +20,9 @@ class Tenant extends BaseTenant
         static::created(fn(Tenant $tenant) => $tenant->runMigrationsSeeders($tenant));
     }
 
-   // public function migration($tenant){
-   //     $this->createDatabase($tenant); 
-   // }
-
 
     public function createDatabase($tenant){
-        $database_name = env('name_data_base_tenant').'_'.Str::random(4);
+        $database_name = env('name_data_base_tenant').'_'.Str::random(8);
         $database = Str::of($database_name)-> replace('.', '_')->lower()->__toString();
         
         $query = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE  SCHEMA_NAME = ? ";
@@ -43,7 +39,7 @@ class Tenant extends BaseTenant
     public function runMigrationsSeeders($tenant){
         $tenant->execute(function () {
             Artisan::call('migrate', [
-                '--path' => 'database/migrations',
+                '--path' => 'database/migrations/tenant',
                 '--force' => true,
                 '--database' => 'tenant'
             ],

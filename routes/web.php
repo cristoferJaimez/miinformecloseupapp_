@@ -28,12 +28,11 @@ use App\Http\Controllers\LoginTenantController;
     Route::view('registrationrequest', 'auth.registrationrequest')->name('registrationrequest');
    //listado de clientes
     Route::view('usersclients', 'layout.usersclients')->name('usersclients');
-    Route::post('usersclients', [TenantUsersController::class, 'viewUsersTenant'])->name('usersclients')->middleware('auth');
     
     //petition get
     Route::get('/',  [TenantContoller::class, 'view'] );    
     //tenant
-    Route::get('home', [TenantContoller::class, 'view_home_tenant', TenantUsersController::class, ' viewUsersTenant'])->middleware('auth');;
+    Route::get('home', [TenantUsersController::class, 'viewUsersTenant'])->middleware('auth');;
     //post
     //position post
     Route::post( 'login' , [LoginTenantController::class , 'Login'])->middleware('guest');

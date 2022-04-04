@@ -54,7 +54,6 @@ class Kernel extends HttpKernel
         ],
         'tenant.api' => [
             \Spatie\Multitenancy\Http\Middleware\NeedsTenant::class,
-
         ],
     ];
 

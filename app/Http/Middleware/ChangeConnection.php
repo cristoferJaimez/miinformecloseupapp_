@@ -19,7 +19,7 @@ class ChangeConnection
         $namedb = Request::header('namedb'); // Este es el parámetro a validar
         if(!empty($namedb)){
             \Config::set('database.connections.tenant.database',$namedb); // Asigno la DB que voy a usar
-            DB::connection('tenant'); //Asigno la nueva conexión al sistema. 
+            \DB::connection('tenant'); //Asigno la nueva conexión al sistema. 
         }
         return $next($request);
     

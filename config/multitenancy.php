@@ -12,7 +12,7 @@ use Spatie\Multitenancy\Models\Tenant;
 
 return [
 
-    'enabled' => true,
+    'enabled' => env('MULTITENANCY_ENABLED', false),
     /*
      * This class is responsible for determining which tenant should be current
      * for the given request.
@@ -36,7 +36,7 @@ return [
      */
     'switch_tenant_tasks' => [
         // \Spatie\Multitenancy\Tasks\PrefixCacheTask::class,
-         \Spatie\Multitenancy\Tasks\SwitchTenantDatabaseTask::class,
+         Spatie\Multitenancy\Tasks\SwitchTenantDatabaseTask::class,
         // \Spatie\Multitenancy\Tasks\SwitchRouteCacheTask::class,
     ],
 
@@ -52,7 +52,7 @@ return [
      * will be automatically set on the job. When the job is executed, the set
      * tenant on the job will be made current.
      */
-    'queues_are_tenant_aware_by_default' => false,
+    'queues_are_tenant_aware_by_default' => true,
 
     /*
      * The connection name to reach the tenant database.

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandlordUsersController;
 
 
-    Route::get('/',  [TenantContoller::class, 'view_'] );
+    Route::get('/',  [TenantContoller::class, 'view_'] )->name('welcome');
     
     Route::view('register', 'auth.register')->name('register')->middleware('auth');
     Route::post('register', [RegisterController::class, 'register'])->name('contollerRegister')->middleware('auth');

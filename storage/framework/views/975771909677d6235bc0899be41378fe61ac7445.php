@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 
 <head>
     <meta charset="utf-8">
@@ -18,7 +18,7 @@
 </head>
 
 <body class="container">
-    @include('layout.nav')
+    <?php echo $__env->make('layout.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 container-fluid">
 
@@ -47,3 +47,4 @@
 </body>
 
 </html>
+<?php /**PATH C:\xampp\htdocs\miinformecloseupapp\resources\views/welcome.blade.php ENDPATH**/ ?>
