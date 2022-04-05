@@ -1,10 +1,5 @@
-
-
-        <div class=" mt-5 row justify-content-end aling-items-center ">
-
-       
-
-            <div class="col-md-8 col-sm-12 mt-3 ">
+  <div class=" m-2 mt-5 row justify-content-end aling-items-center ">
+        <div class="col-md-8 col-sm-12 mt-3 ">
  
                 <p class="text-left">
                    <img src="https://www.close-upinternational.com/img/logo.svg" width="60px" height="60px" alt="logo" class="p-1 border  rounded-circle" /> 
@@ -15,7 +10,7 @@
                 <div class="card border border-light mt-2" >
                     <div class="card-body">
                         
-                        <form action="<?php echo e('login'); ?>" method="POST">
+                        <form action="<?php echo e(route('login')); ?>" method="POST">
                             <div class="form-group ">
                                 <!--token-->
                                 <?php echo csrf_field(); ?>

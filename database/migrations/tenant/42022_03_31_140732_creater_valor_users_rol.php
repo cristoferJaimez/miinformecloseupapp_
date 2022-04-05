@@ -16,7 +16,8 @@ return new class extends Migration
 
     static $rols = [
             'admin',
-            'proveedor de cadena / distribuidores',
+            'proveedores',
+            'cadena / distribuidores',
             'laboratorio coorporaciones',
             'cliente interno'
     ];

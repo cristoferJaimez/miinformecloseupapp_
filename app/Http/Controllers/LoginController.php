@@ -14,7 +14,7 @@ class LoginController extends Controller
         
         if(Auth::attempt($request->only('email', 'password'), $remember)){
             request()->session()->regenerate();            
-            return redirect()->intended('home')->with('status', 'You are logger in!');
+            return redirect()->intended('/')->with('status', 'You are logger in!');
 
         }
 

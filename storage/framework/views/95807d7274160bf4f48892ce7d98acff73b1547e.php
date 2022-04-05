@@ -27,7 +27,7 @@
     <body>
         <div class="">
             <div class="row">
-                <div class="col-md-5 col-sm-12   ">
+                <div class="col-md-5 col-sm-12">
                     <div class="">
                         <?php if(auth()->guard()->check()): ?>
                         <?php echo $__env->make('auth.user', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -39,26 +39,32 @@
 
                     </div>
                 </div>
-                <div  class="border-start text-with bg-dark justify-conten   col-md-7 col-sm-12 d-sm-none  d-none d-md-block m-0  row justify-content-center aling-item-center"  style="height: 750px">
                    
+                   <?php if(auth()->guard()->check()): ?>
+                    <?php echo $__env->make('auth.home', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                   <?php endif; ?>
+                    <?php if(auth()->guard()->guest()): ?>
+                <div  class="border-start text-with bg-dark justify-content   col-md-7 col-sm-12 d-sm-none  d-none d-md-block m-0  row justify-content-center aling-item-center"  style="height: 750px">
                     <div class="col-auto p-5 mt-5 " style="color: aliceblue">
-                    <p class="text-left">
-                        <h1>Welcome to</h1>
-                        <h2>our community</h2>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum dignissimos unde eum perspiciatis. Qui consequatur explicabo, ratione tempore illo ut eaque deleniti nobis aspernatur facilis nam tenetur inventore quis et?
+                        <p class="text-left">
+                            <h1>Welcome to</h1>
+                            <h2>our community</h2>
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum dignissimos unde eum perspiciatis. Qui consequatur explicabo, ratione tempore illo ut eaque deleniti nobis aspernatur facilis nam tenetur inventore quis et?
+                            </p>
+    
+                            <p class="text-center">
+                                Our clients
+                            </p>
+                            <p>
+                                
+                            </p>
                         </p>
-
-                        <p class="text-center">
-                            Social Netword
-                        </p>
-                        <p>
-                            link social netword
-                        </p>
-                    </p>
-                   </div>
+                       </div>
                 </div>
-            </div>
+                    <?php endif; ?>
+                  
+              
         </div>
 
        

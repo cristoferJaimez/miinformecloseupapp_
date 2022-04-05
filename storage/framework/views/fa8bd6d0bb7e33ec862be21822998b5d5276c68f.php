@@ -1,18 +1,6 @@
-    <?php if(auth()->guard()->check()): ?>
-        <title><?php echo e(auth()->user()->name); ?></title>
-    <?php endif; ?>
-    <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
-    <link href="<?php echo e(asset('css/nav.css')); ?>" rel="stylesheet">
-    <script src="<?php echo e(asset('js/app.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/nav.js')); ?>"></script>
 
-    <nav class="navbar  navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a href="<?php echo e('/'); ?>" class="navbar-brand">
-                <img src="https://www.close-upinternational.com/img/logo.svg" width="150px" alt="Close up logo" />
-            </a>
            
-            <?php if(auth()->guard()->check()): ?>
             
             <?php endif; ?>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -86,8 +74,7 @@
             </div>
 
         </div>
-    </nav>
-
+  
 
 
     <?php if(session('status')): ?>
