@@ -1,61 +1,62 @@
-    <!DOCTYPE html>
-    <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Login</title>
-    </head>
 
-    <body class="container">
+        <div class=" mt-5 row justify-content-end aling-items-center ">
 
-        @include('layout.nav')
+       
 
-        <div class="m-0 mt-5 row justify-content-center aling-items-center ">
-
-            <div class="col-auto   text-center">
-
-                <div class="card border mt-5" style="border:none">
+            <div class="col-md-8 col-sm-12 mt-3 ">
+ 
+                <p class="text-left">
+                   <img src="https://www.close-upinternational.com/img/logo.svg" width="60px" height="60px" alt="logo" class="p-1 border  rounded-circle" /> 
+                   <h2> Sign in</h2>
+                   
+                   <h6>Don't have an account? <a href="">Sign up</a></h6> 
+                </p>
+                <div class="card border border-light mt-2" >
                     <div class="card-body">
-                        <form action="" method="POST">
-                            <div class="form-group text-center">
+                        
+                        <form action="{{'login'}}" method="POST">
+                            <div class="form-group ">
                                 <!--token-->
                                 @csrf
-                                <label class="form-label">
+                                <div class="mt-3">
+                                    <label class="form-label">Email address *</label>
                                     <input type="email" class="form-control" required autofocus
                                         value="{{ old('email') }}" name="email" placeholder="Email..." />
-                                </label>
+                                
                                 <div class="form-text text-danger">
                                     @error('email')
                                         {{ $message }}
                                     @enderror
                                 </div>
-                                <label class="form-label">
+                                </div>
+                                <div class="mt-3">
+                                    <label class="form-label">Password * </label>
                                     <input type="password" class="form-control" required name="password"
                                         placeholder="Password..." />
-                                </label>
+                               
                                 <div class="form-text text-danger"> @error('password')
                                         {{ $message }}
                                     @enderror
                                 </div>
-                                <label>
-                                    <input type="checkbox" name="remember" />
-                                    <p class="card-link " style="display: inline">Remember me?</p>
-                                </label>
+                                </div>
+                                <div class="mt-3">
+                                    <label>
+                                        <input type="checkbox" name="remember" />
+                                        <p class="card-link " style="display: inline">Remember me?</p>
+                                    </label>
+                                </div>
                                 <br>
 
-                                <button class="btn mt-2  btn-primary" type="submit">Log In</button>
+                                <div class="d-grid gap-1">
+                                    <button class="btn mt-2  btn-primary" type="submit">Sign In</button>
+                                  </div>
+                            
                             </div>
                         </form>
                     </div>
-
                 </div>
             </div>
-
-        </div>
         </div>
 
-    </body>
-
-    </html>
+    

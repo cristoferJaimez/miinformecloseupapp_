@@ -16,14 +16,6 @@
             </div>
             
         </div>
-        <script>  
-
-            function divChange(){
-             let div_ = document.getElementById('change');
-                div_.innerHTML= "Texto";
-
-            }
-            
-        </script>
+   
     </body>
 </html><?php /**PATH C:\xampp\htdocs\miinformecloseupapp\resources\views/layout/maintenant.blade.php ENDPATH**/ ?>
