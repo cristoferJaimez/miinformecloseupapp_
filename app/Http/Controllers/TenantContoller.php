@@ -11,10 +11,7 @@ class TenantContoller extends Controller
    
     //landloard
 
-    public function view_home(){
-        //return $tenants;
-        return  view('landlord/admin/home');
-    }
+   
 
     public function view_(){
         return  view('welcome');
@@ -35,15 +32,12 @@ class TenantContoller extends Controller
         return $request;
     }
 
-    public function view_home_tenant(){
-        //return $tenants;
-        return  view('tenant/admin/home' );
-    }
+  
 
     //tenant table
     public function table(){
         $sql = 'SELECT * FROM users';
         $products = DB::select($sql);
-        return $products;
+        return  $products;
     }
 }

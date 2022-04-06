@@ -10,7 +10,7 @@
                 <div class="card border border-light mt-2" >
                     <div class="card-body">
                         
-                        <form action="{{route('login')}}" method="POST">
+                        <form action="{{'login'}}" method="POST">
                             <div class="form-group ">
                                 <!--token-->
                                 @csrf

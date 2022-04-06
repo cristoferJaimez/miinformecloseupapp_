@@ -10,7 +10,7 @@
                 <div class="card border border-light mt-2" >
                     <div class="card-body">
                         
-                        <form action="<?php echo e(route('login')); ?>" method="POST">
+                        <form action="<?php echo e('login'); ?>" method="POST">
                             <div class="form-group ">
                                 <!--token-->
                                 <?php echo csrf_field(); ?>

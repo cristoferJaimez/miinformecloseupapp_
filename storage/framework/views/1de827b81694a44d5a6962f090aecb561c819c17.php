@@ -9,14 +9,22 @@
             <table class="table">
               <tr>
                 <td>Name</td>
-                <td>Name users</td>
+                <td>Email users</td>
               </tr>
             </table>
-            <form action="">
+            <form action="<?php echo e('post'); ?>" method="POST">
               <?php echo csrf_field(); ?>
               <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">url post.</label>
-                <input type="url" class="form-control" name="url" id="url" required  placeholder="www.myurlreport.com.co"/>
+                <label for="title" class="form-label">Title.</label>
+                <input type="text" class="form-control" name="title" id="title" required  placeholder="title post..."/>
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Description.</label>
+                <textarea class="form-control" name="description" id="description" placeholder="Description for report..." rows="3"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="url" class="form-label">url post.</label>
+                <input type="url" class="form-control" name="url" id="url" required  placeholder="https://www.myurlreport.com.co"/>
               </div>
               <button type="submit" class="btn btn-success" >post</button>
               </div>

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Models\Tenant;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ControllerPost;
+use App\Http\Controllers\usersController;
 use App\Http\Controllers\LoginTenantController;
 
 
@@ -35,10 +36,13 @@ use App\Http\Controllers\LoginTenantController;
     Route::get('home', [TenantContoller::class, 'view_home_tenant'])->name('home')->middleware('auth');;
     //post
     //position post
-    Route::post( 'login' , [LoginTenantController::class , 'Login'])->middleware('guest');
+    Route::post( 'login' , [LoginController::class , 'Login'])->name('login')->middleware('guest');
     Route::post( 'logout' , [LoginController::class , 'Logout'])->name('logout');
+    
     
     //post url
     Route::post( 'post', [ControllerPost::class, 'post'] )->name('post')->middleware('auth');
 
+    //list users
+    Route::get('listusers', [usersController::class, 'listUsers'])->name('listusers')->middleware('auth');
 
