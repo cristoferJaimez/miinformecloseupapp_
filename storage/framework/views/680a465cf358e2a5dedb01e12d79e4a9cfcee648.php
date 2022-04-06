@@ -1,39 +1,19 @@
-<!-- Stored in resources/views/layouts/app.blade.php -->
-<html>
-
-<head>
-    <title> <?php echo e(auth()->user()->name); ?> <?php echo $__env->yieldContent('Close Up'); ?></title>
-
-</head>
-
-<body class="container fluid">
-    <?php if(auth()->guard()->check()): ?>
-
-
-        <?php echo $__env->make('layout.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
-        <div class="row">
-            <div class="col-2 m-0 ">
-                <?php echo $__env->make('layout.navdashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            </div>
-            <div class="col-8 container  mt-5" id="navlayout">
-                <iframe src="<?php echo e(URL::to('homeindex')); ?>" allowfullscreen class="col-12 mx-auto" name="iframe" frameborder="1"></iframe>
-            </div>
-            <div class="col-2 mt-5">
-                <h6 class="text-muted">--Other Opciones--</h6>
-                <ul>
-                    
-                </ul>
-            </div>
-
+<div class="card mb-3 col-md-12 col-sm-12" >
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="data:image/png;base64,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" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos hic vitae, tempore numquam suscipit nihil quas aut modi nisi harum delectus quod nulla voluptatibus laborum non facere, tenetur autem! Illo.
+            <a href="#" class="" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">view</a>  
+            .</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
-    
+      </div>
+    </div>
+  </div>
 
-    <?php endif; ?>
-
-    <script src="<?php echo e(asset('js/nav.js')); ?>"></script>
-
-</body>
-
-</html>
-<?php /**PATH C:\xampp\htdocs\miinformecloseupapp\resources\views/layout/main.blade.php ENDPATH**/ ?>
+  <?php echo $__env->make('layout.modal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\miinformecloseupapp\resources\views/layout/main.blade.php ENDPATH**/ ?>

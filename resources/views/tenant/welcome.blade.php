@@ -30,7 +30,12 @@
                 <div class="col-md-5 col-sm-12">
                     <div class="">
                         @auth
-                        @include('auth.user')
+                        <div class="d-flex align-items-center p-5  flex-column bd-highlight">
+                            <div class="mt-auto p-5  bd-highlight">
+                                @include('auth.user')
+                            </div>
+                        </div>
+                            
                         @endauth
 
                         @guest

@@ -30,7 +30,12 @@
                 <div class="col-md-5 col-sm-12">
                     <div class="">
                         <?php if(auth()->guard()->check()): ?>
-                        <?php echo $__env->make('auth.user', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                        <div class="d-flex align-items-center p-5  flex-column bd-highlight">
+                            <div class="mt-auto p-5  bd-highlight">
+                                <?php echo $__env->make('auth.user', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                            </div>
+                        </div>
+                            
                         <?php endif; ?>
 
                         <?php if(auth()->guard()->guest()): ?>

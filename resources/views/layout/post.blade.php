@@ -1,16 +1,29 @@
 <div>
-    <h1>Post URL</h1>
-    <form action="{{'post'}}" method="POST">
-        <div class="form-group text-center">
-            <!--token-->
-            @csrf
-            <label class="form-label">
-                <input type="url" class="form-control" required autofocus value="{{ old('url') }}" name="url" placeholder="Url post..." />
-            </label>
-            <div class="form-text text-danger">@error('email'){{$message}}@enderror</div>
-             
-           
-           <button class="btn mt-2  btn-primary" type="submit">send post</button>                           
-        </div>        
-    </form>
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name Users</th>
+                    <th scope="col">post</th>
+                    <th scope="col">action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>12-03-2022</td>
+                    <td>
+                      <a href="#" class="" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">public</a>  
+                    </td>
+                  </tr>
+                   
+                </tbody>
+              </table>
+        </div>
+    </div>
 </div>
+
+@include('layout.modalPost')
