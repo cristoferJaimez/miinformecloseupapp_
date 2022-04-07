@@ -26,7 +26,9 @@
                 <label for="url" class="form-label">url post.</label>
                 <input type="url" class="form-control" name="url" id="url" required  placeholder="https://www.myurlreport.com.co"/>
               </div>
-              <button type="submit" class="btn btn-success" >post</button>
+              <div class="d-grid gap-2 col-12 mx-auto">
+                <button type="submit" class="btn btn-success" >post</button>
+              </div>
               </div>
             </form>
         </div>

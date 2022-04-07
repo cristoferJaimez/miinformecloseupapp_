@@ -10,8 +10,7 @@
     <?php endif; ?>
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('css/nav.css')); ?>" rel="stylesheet">
-    <script src="<?php echo e(asset('js/app.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/nav.js')); ?>"></script>
+    
            <title></title>
         
 
@@ -32,6 +31,8 @@
                         <?php if(auth()->guard()->check()): ?>
                         <div class="d-flex align-items-center p-5  flex-column bd-highlight">
                             <div class="mt-auto p-5  bd-highlight">
+
+
                                 <?php echo $__env->make('auth.user', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </div>
                         </div>
@@ -72,7 +73,8 @@
               
         </div>
 
-       
+        <script src="<?php echo e(asset('js/app.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/nav.js')); ?>"></script>
     </body>
 </html>
 <?php /**PATH C:\xampp\htdocs\miinformecloseupapp\resources\views/tenant/welcome.blade.php ENDPATH**/ ?>

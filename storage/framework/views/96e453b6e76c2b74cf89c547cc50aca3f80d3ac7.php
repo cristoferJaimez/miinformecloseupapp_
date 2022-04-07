@@ -1,3 +1,5 @@
+<link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+<link href="<?php echo e(asset('css/nav.css')); ?>" rel="stylesheet">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand text-danger" href="#">
@@ -15,11 +17,20 @@
             <a class="nav-link active" aria-current="page" href="#">List post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#">List Users</a>
+            <a class="nav-link " aria-current="page" href="<?php echo e(route('list')); ?>">List Users</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="<?php echo e('logout'); ?>">Sign Out</a>
           </li>
          
-         
-        
+     <!--    <li>
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            Button with data-bs-target
+          </button>
+          
+         </li>
+        -->
           
         </ul>
         <ul class="d-flex">
@@ -32,4 +43,8 @@
     
 
     </div>
-  </nav>    <?php /**PATH C:\xampp\htdocs\miinformecloseupapp\resources\views/auth/header.blade.php ENDPATH**/ ?>
+  </nav>    
+
+  
+  <script src="<?php echo e(asset('js/app.js')); ?>"></script>
+  <script src="<?php echo e(asset('js/nav.js')); ?>"></script><?php /**PATH C:\xampp\htdocs\miinformecloseupapp\resources\views/auth/header.blade.php ENDPATH**/ ?>

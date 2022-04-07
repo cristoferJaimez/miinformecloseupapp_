@@ -2,13 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Users;
 
 class usersController extends Controller
 {
-    public function listUsers(){
-        $users = DB::table('users')->select(['name', 'email', 'id'])->get();
-        return view('layout/post', ['users'=> $users]);
+  
+    protected $users;
+
+    public function __construct(Users $users){
+        $this->users = $users;
     }
+    
+    public function index()
+    {
+    $users = $this->users->userAll();
+    return view('layout.post', ['users' => $users]);
+    }    
+    
 }

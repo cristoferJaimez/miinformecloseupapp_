@@ -1,14 +1,10 @@
 <?php
 
+use App\Http\Controllers\usersController;
 use App\Http\Controllers\TenantContoller;
-use App\Http\Controllers\TenantUsersController;
 use Illuminate\Support\Facades\Route;
-use \App\Models\Tenant;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ControllerPost;
-use App\Http\Controllers\usersController;
-use App\Http\Controllers\LoginTenantController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -28,21 +24,19 @@ use App\Http\Controllers\LoginTenantController;
     Route::view('register', 'auth.register')->name('register')->middleware('auth');
     Route::view('registrationrequest', 'auth.registrationrequest')->name('registrationrequest');
    //listado de clientes
-    Route::view('usersclients', 'layout.usersclients')->name('usersclients');
     
     //petition get
     Route::get('/',  [TenantContoller::class, 'view'] );    
-    //tenant
-    Route::get('home', [TenantContoller::class, 'view_home_tenant'])->name('home')->middleware('auth');;
-    //post
+   
+    Route::view('home', 'auth.home')->name('home');
+
     //position post
     Route::post( 'login' , [LoginController::class , 'Login'])->name('login')->middleware('guest');
     Route::post( 'logout' , [LoginController::class , 'Logout'])->name('logout');
     
     
     //post url
-    Route::post( 'post', [ControllerPost::class, 'post'] )->name('post')->middleware('auth');
+    Route::post( 'post', [postController::class, 'post'] )->name('post')->middleware('auth');
 
     //list users
-    Route::get('listusers', [usersController::class, 'listUsers'])->name('listusers')->middleware('auth');
-
+    Route::get('list', [usersController::class, 'index'])->name('list');

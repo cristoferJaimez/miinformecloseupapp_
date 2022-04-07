@@ -3,7 +3,6 @@
 
     <div class="col-sm-12 col-md-12 p-5 mt-5 " >
        @if(auth()->user()->fk_rol === 1)
-            @include('layout.post')
        @else
             @include('layout.main')
        @endif       

@@ -10,8 +10,7 @@
     @endauth
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/nav.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/nav.js') }}"></script>
+    
            <title></title>
         
 
@@ -32,6 +31,8 @@
                         @auth
                         <div class="d-flex align-items-center p-5  flex-column bd-highlight">
                             <div class="mt-auto p-5  bd-highlight">
+
+
                                 @include('auth.user')
                             </div>
                         </div>
@@ -72,6 +73,7 @@
               
         </div>
 
-       
+        <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/nav.js') }}"></script>
     </body>
 </html>

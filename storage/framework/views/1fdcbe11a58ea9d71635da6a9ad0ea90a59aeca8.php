@@ -3,7 +3,6 @@
 
     <div class="col-sm-12 col-md-12 p-5 mt-5 " >
        <?php if(auth()->user()->fk_rol === 1): ?>
-            <?php echo $__env->make('layout.post', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
        <?php else: ?>
             <?php echo $__env->make('layout.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
        <?php endif; ?>       
